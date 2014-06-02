@@ -1,14 +1,20 @@
 package com.starwall.boy.adapter;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.starwall.boy.app.R;
+import com.starwall.boy.R;
 import com.starwall.boy.bean.Desk;
+import com.starwall.boy.common.UIHelper;
 
 import java.util.List;
 
@@ -22,10 +28,23 @@ public class GridDeskItemAdapter extends BaseAdapter {
     private LayoutInflater listContainer;//视图容器
     private int itemViewResource;//自定义项视图源
 
+    public boolean isDeskItemViewClick() {
+        return isDeskItemViewClick;
+    }
+
+    public void setDeskItemViewClick(boolean isDeskItemViewClick) {
+        this.isDeskItemViewClick = isDeskItemViewClick;
+    }
+
+    private boolean isDeskItemViewClick = false;
+
+
+
 
     static class DeskItemView {                //自定义控件集合
         public TextView name;
         public TextView status;
+        public LinearLayout layout;
     }
 
     public GridDeskItemAdapter(Context context, List<Desk> data, int resource) {
@@ -39,12 +58,10 @@ public class GridDeskItemAdapter extends BaseAdapter {
         return listItems.size();
     }
 
-    // 获取图片在库中的位置
     public Object getItem(int position) {
         return position;
     }
 
-    // 获取图片ID
     public long getItemId(int position) {
         return 0;
     }
@@ -60,11 +77,30 @@ public class GridDeskItemAdapter extends BaseAdapter {
             deskItemView = new DeskItemView();
             deskItemView.name = (TextView) convertView.findViewById(R.id.deskItemText);
             deskItemView.status = (TextView) convertView.findViewById(R.id.deskStatusText);
+            deskItemView.layout = (LinearLayout)convertView.findViewById(R.id.deskItemView);
+
             convertView.setTag(deskItemView);
         } else {
 
             deskItemView = (DeskItemView) convertView.getTag();
         }
+
+        Desk desk = listItems.get(position);
+        deskItemView.name.setText(desk.getName());
+        deskItemView.status.setText(desk.getStatus());
+        deskItemView.layout.setOnClickListener(deskItemClickListener);
         return convertView;
     }
+
+    private View.OnClickListener deskItemClickListener = new View.OnClickListener() {
+
+        public void onClick(View v) {
+
+            if(!isDeskItemViewClick()){
+                Log.i("GridDeskItemAdapter", "GridDeskItemAdapter Click");
+                UIHelper.showDeskAction(context);
+            }
+            setDeskItemViewClick(false);
+        }
+    };
 }

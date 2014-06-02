@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.starwall.boy.R;
 
 public class MyAppActivity extends Activity {
 
@@ -30,6 +31,7 @@ public class MyAppActivity extends Activity {
         passwordText = (EditText) findViewById(R.id.passwordText);
 
         loginBtn.setOnClickListener(new LoginOnClick());
+
     }
 
     public class LoginOnClick implements View.OnClickListener {
@@ -41,13 +43,13 @@ public class MyAppActivity extends Activity {
             String password = passwordText.getText().toString();
 
             Log.i("MyAppActivity", "click username : " + username + " password : " + password);
-            if(username.equals("1001") && password.equals("1001")) {
+            if(username.equals("1") && password.equals("1")) {
 
                 Intent intent = new Intent();
                 intent.setClass(MyAppActivity.this, DeskActivity.class);
                 intent.putExtra("str", "come from first activity");
                 startActivity(intent);//无返回值的调用,启动一个明确的activity
-
+                finish();
             } else {
                 Context context = getApplicationContext();
                 Toast toast = Toast.makeText(context, "密码错误", Toast.LENGTH_LONG);

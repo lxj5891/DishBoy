@@ -15,8 +15,32 @@
             android:layout_gravity="center_horizontal"/>
     <GridView
             android:layout_width="match_parent"
-            android:layout_height="480dp"
-            android:id="@+id/deskGridView" android:layout_gravity="center_horizontal" android:numColumns="3"/>
+            android:layout_height="wrap_content"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp"
+            android:id="@+id/deskGridView" android:layout_gravity="center_horizontal" android:numColumns="3"
+            android:clickable="false" android:background="#ffaea6a9"/>
+    <LinearLayout
+            android:id="@+id/actionView"
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp">
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button2"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/button3"/>
+    </LinearLayout>
 
 
 </LinearLayout>
