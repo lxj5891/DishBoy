@@ -1,16 +1,47 @@
 package com.starwall.boy.bean;
 
+import com.starwall.boy.AppException;
+import com.starwall.boy.common.StringUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * Created by Antony on 14-5-30.
  */
 public class Desk {
+
+    private String _id;
     private String name;
     private int valid;
     private int capacity;
     private int type;
     private int senderId;
     private boolean supportPaddling;
-    private String status;
+    private Service service;
+
+    public static Desk parseJson(JSONObject json) throws JSONException {
+
+        Desk desk = new Desk();
+        desk.setName(json.getString("name"));
+        desk.set_id(json.getString("_id"));
+        if (json.has("service")) {
+            desk.setService(Service.parseJson(json.getJSONObject("service")));
+        }
+        return desk;
+    }
+
+    public static Desk parse(InputStream inputStream) throws IOException, AppException, JSONException {
+
+        String json = StringUtils.toConvertString(inputStream);
+
+        JSONObject jsonObject = new JSONObject(json).getJSONObject("data");
+        Desk desk = new Desk();
+
+        return desk;
+    }
 
     public String getName() {
         return name;
@@ -60,12 +91,20 @@ public class Desk {
         this.supportPaddling = supportPaddling;
     }
 
-    public String getStatus() {
-        return status;
+    public String get_id() {
+        return _id;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public Service getService() {
+        return service;
+    }
+
+    public void setService(Service service) {
+        this.service = service;
     }
 }
 

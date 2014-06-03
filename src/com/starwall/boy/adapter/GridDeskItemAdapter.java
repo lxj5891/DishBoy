@@ -2,6 +2,7 @@ package com.starwall.boy.adapter;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
@@ -87,7 +88,17 @@ public class GridDeskItemAdapter extends BaseAdapter {
 
         Desk desk = listItems.get(position);
         deskItemView.name.setText(desk.getName());
-        deskItemView.status.setText(desk.getStatus());
+
+        if (desk.getService() != null) {
+            deskItemView.status.setText("状态 " + desk.getService().getStatus());
+            deskItemView.layout.setBackgroundColor(Color.rgb(102, 0, 0));
+
+        } else {
+            deskItemView.status.setText("空闲");
+
+            deskItemView.layout.setBackgroundColor(Color.parseColor("#ffc18a5d"));
+        }
+
         deskItemView.layout.setOnClickListener(deskItemClickListener);
         return convertView;
     }

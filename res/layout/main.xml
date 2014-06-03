@@ -4,24 +4,38 @@
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
               android:weightSum="1">
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="点菜宝"
-            android:textAlignment="center" android:textColor="#ff8365" android:singleLine="false"
-            android:password="false" android:phoneNumber="false"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:weightSum="1">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="点菜宝"
+                android:id="@+id/textView"/>
+        <ProgressBar
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/loginProgressBar" android:layout_weight="0.04"/>
+
+    </LinearLayout>
+
+
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
-            android:id="@+id/editText" android:text="1"/>
+            android:id="@+id/editText" android:text="sara"/>
     <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/passwordText" android:layout_gravity="center_horizontal" android:text="1"/>
+            android:id="@+id/passwordText" android:layout_gravity="center_horizontal" android:text="sara"/>
 
     <TableRow
             android:layout_width="match_parent"

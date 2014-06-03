@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
  * @created 2012-3-21
  */
 public class StringUtils {
+
     private final static Pattern emailer = Pattern
             .compile("\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*");
     // private final static SimpleDateFormat dateFormater = new
