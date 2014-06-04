@@ -78,7 +78,6 @@
 		<item name="@android:windowExitAnimation">@anim/gd_shrink_from_top</item>
 	</style>
 
-
     <style name="popupMenu" parent="android:Animation">
         <item name="@android:windowEnterAnimation">@anim/head_in</item>  //进入时的动画   
         <item name="@android:windowExitAnimation">@anim/head_out</item>    //退出时的动画   
