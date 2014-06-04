@@ -16,8 +16,8 @@ import java.net.URLEncoder;
  * @created 2012-3-21
  */
 public class URLs implements Serializable {
-	
-	public final static String HOST = "10.2.3.246:3000";//192.168.1.213  www.oschina.net
+
+	public final static String HOST = "115.28.161.172:3000";//192.168.1.213  www.oschina.net
 	public final static String HTTP = "http://";
 	public final static String HTTPS = "https://";
 	
