@@ -250,22 +250,22 @@ public class URLs implements Serializable {
 		p = path.indexOf(url_type) + url_type.length();
 		str = path.substring(p);
 		if(str.contains("?")){
-			tmp = str.split(new String("?"));
-			objKey = tmp[0];
-		}else{
-			objKey = str;
-		}
-		return objKey;
-	}
-	
-	/**
-	 * 对URL进行格式处理
-	 * @param path
-	 * @return
-	 */
+                    tmp = str.split(new String("?"));
+                    objKey = tmp[0];
+        }else{
+                    objKey = str;
+        }
+        return objKey;
+    }
+
+    /**
+     * 对URL进行格式处理
+     * @param path
+     * @return
+     */
 	private final static String formatURL(String path) {
 		if(path.startsWith("http://") || path.startsWith("https://"))
 			return path;
 		return "http://" + URLEncoder.encode(path);
-	}	
+	}
 }

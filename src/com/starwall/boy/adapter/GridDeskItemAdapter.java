@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.starwall.boy.R;
+import com.starwall.boy.app.DeskActivity;
 import com.starwall.boy.bean.Desk;
 import com.starwall.boy.common.UIHelper;
 
@@ -107,11 +108,7 @@ public class GridDeskItemAdapter extends BaseAdapter {
 
         public void onClick(View v) {
 
-            if(!isDeskItemViewClick()){
-                Log.i("GridDeskItemAdapter", "GridDeskItemAdapter Click");
-                UIHelper.showDeskAction(context);
-            }
-            setDeskItemViewClick(false);
+            ((DeskActivity)context).mGrid.show(v);
         }
     };
 }

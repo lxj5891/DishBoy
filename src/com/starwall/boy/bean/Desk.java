@@ -25,11 +25,16 @@ public class Desk {
     public static Desk parseJson(JSONObject json) throws JSONException {
 
         Desk desk = new Desk();
+
         desk.setName(json.getString("name"));
+
         desk.set_id(json.getString("_id"));
+
         if (json.has("service")) {
+
             desk.setService(Service.parseJson(json.getJSONObject("service")));
         }
+
         return desk;
     }
 

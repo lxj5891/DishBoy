@@ -34,9 +34,6 @@ public class ActionActivity extends Activity {
 
     public void initActionView() {
 
-        setupServiceBtn = (Button) findViewById(R.id.setupServiceBtn);
-        gotoMenuBtn = (Button) findViewById(R.id.gotoMenuBtn);
-
         setupServiceBtn.setOnClickListener(onSetupServiceBtnClickListener);
         gotoMenuBtn.setOnClickListener(onGotoMenuBtnClickListener);
     }

@@ -3,6 +3,12 @@
     <string name="app_name">DishBoy</string>
     <string name="title">Large Text</string>
 
+
+    <string name="main_menu_setup">开台</string>
+    <string name="main_menu_dish">开台</string>
+    <string name="main_menu_bill">查账单</string>
+    <string name="main_menu_done_order">划菜</string>
+
     <string name="main_menu_login">用户登录</string>
     <string name="main_menu_logout">注销登录</string>
     <string name="main_menu_myinfo">我的资料</string>
