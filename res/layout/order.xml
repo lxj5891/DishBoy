@@ -75,7 +75,8 @@
                     android:layout_height="wrap_content"
                     android:text="助记码："
                     android:id="@+id/textView3"/>
-            <EditText
+
+            <AutoCompleteTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/editText2" android:layout_weight="0.49" android:text="菜品助计码"/>
@@ -88,7 +89,7 @@
         <ListView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/listView"/>
+                android:id="@+id/putOrderList"/>
     </LinearLayout>
 
 </LinearLayout>

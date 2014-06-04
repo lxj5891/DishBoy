@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -65,9 +66,6 @@ public class DeskActivity extends Activity {
     private void initDeskGridView() {
 
         initData();
-
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(100, 100);
-//        mActionLayout.setLayoutParams(layoutParams);
     }
 
     /**
@@ -95,6 +93,12 @@ public class DeskActivity extends Activity {
         mGrid.addQuickAction(new MyQuickAction(this, R.drawable.ic_menu_exit,
                 R.string.main_menu_setup));
 
+        mGrid.addQuickAction(new MyQuickAction(this,
+                R.drawable.ic_menu_setting, R.string.main_menu_setup));
+
+        mGrid.addQuickAction(new MyQuickAction(this, R.drawable.ic_menu_exit,
+                R.string.main_menu_setup));
+
         mGrid.setOnQuickActionClickListener(mActionListener);
     }
     /**
@@ -103,9 +107,15 @@ public class DeskActivity extends Activity {
     private QuickActionWidget.OnQuickActionClickListener mActionListener = new QuickActionWidget.OnQuickActionClickListener() {
         public void onQuickActionClicked(QuickActionWidget widget, int position) {
             switch (position) {
-                case QUICKACTION_LOGIN_OR_LOGOUT:// 用户登录-注销
+
+                case QUICKACTION_LOGIN_OR_LOGOUT:
+                    Log.i("DeskActivity.java","开台");
                     break;
                 case QUICKACTION_USERINFO:// 我的资料
+                    Log.i("DeskActivity.java","点菜");
+                    Intent intent = new Intent();
+                    intent.setClass(getApplicationContext(), OrderActivity.class);
+                    startActivity(intent);
                     break;
                 case QUICKACTION_SOFTWARE:// 开源软件
                     break;
