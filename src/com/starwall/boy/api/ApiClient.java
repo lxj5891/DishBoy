@@ -25,6 +25,7 @@ import java.util.Map;
  * Created by mac on 14-5-31.
  */
 public class ApiClient {
+
     public static final String UTF_8 = "UTF-8";
     public static final String DESC = "descend";
     public static final String ASC = "ascend";

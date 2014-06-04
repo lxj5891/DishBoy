@@ -94,8 +94,8 @@ public class GridDeskItemAdapter extends BaseAdapter {
             deskItemView.layout.setBackgroundColor(Color.rgb(102, 0, 0));
 
         } else {
-            deskItemView.status.setText("空闲");
 
+            deskItemView.status.setText("空闲");
             deskItemView.layout.setBackgroundColor(Color.parseColor("#ffc18a5d"));
         }
 
