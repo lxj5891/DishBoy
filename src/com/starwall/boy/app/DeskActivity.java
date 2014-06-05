@@ -50,6 +50,7 @@ public class DeskActivity extends Activity {
 
     public QuickActionWidget mGrid;// 快捷栏控件
 
+
     private static DeskList deskList;
 
     public void onCreate(Bundle savedInstanceState) {
